@@ -1,7 +1,5 @@
 from __init__ import CURSOR, CONN
-from department import Department
 from employee import Employee
-
 
 class Review:
     all = {}
@@ -13,10 +11,7 @@ class Review:
         self.employee_id = employee_id
 
     def __repr__(self):
-        return (
-            f"<Review {self.id}: {self.year}, '{self.summary}', "
-            + f"Employee ID: {self.employee_id}>"
-        )
+        return f"<Review {self.id}: {self.year}, '{self.summary}', Employee ID: {self.employee_id}>"
 
     @property
     def year(self):
