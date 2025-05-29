@@ -11,7 +11,10 @@ class Review:
         self.employee_id = employee_id
 
     def __repr__(self):
-        return f"<Review {self.id}: {self.year}, '{self.summary}', Employee ID: {self.employee_id}>"
+        return (
+            f"<Review {self.id}: {self.year}, '{self.summary}', "
+            + f"Employee ID: {self.employee_id}>"
+        )
 
     @property
     def year(self):
@@ -86,6 +89,7 @@ class Review:
             CONN.commit()
 
         Review.all[self.id] = self
+        print(f"Saved review with id {self.id}, employee_id {self.employee_id}")  # Debug print
 
     @classmethod
     def create(cls, year, summary, employee_id):
